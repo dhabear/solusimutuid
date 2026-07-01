@@ -4,12 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solusi Mutu Integritas | SMI Konsultan</title>
+<link rel="icon" type="image/png" sizes="192x192" href="cropped-logo-smi-bulat-192x192.png">
+<link rel="apple-touch-icon" href="cropped-logo-smi-bulat-192x192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <header>
   <div class="navbar">
@@ -66,36 +70,67 @@
       <p class="eyebrow">Solusi Mutu Integritas</p>
       <h2 class="section-title">Jasa Kami</h2>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-sitemap"></i></div>
-        <h3>Konsultasi Sistem Manajemen</h3>
-        <p>SMI Konsultan adalah solusi pendampingan implementasi untuk meraih sertifikasi sistem manajemen</p>
+    <div class="jasa-row media-right">
+      <div class="jasa-media reveal">
+        <div class="jasa-framewrap">
+          <img class="logo-pin pin-left" src="cropped-logo-smi-bulat-192x192.png" alt="" aria-hidden="true">
+          <div class="jasa-frame"><img src="managementconsult.jpg" alt="Konsultasi Manajemen SMI"></div>
+        </div>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
-        <h3>Konsultasi SMK3 KEMNAKER</h3>
-        <p>Perusahaan yang mempekerjakan 100 atau lebih pegawai Wajib menerapkan SMK3 PP 50 TH 2012</p>
+      <div class="jasa-list reveal">
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-sitemap"></i></div>
+          <div class="jasa-item-body">
+            <h3>Konsultasi Sistem Manajemen</h3>
+            <p>SMI Konsultan adalah solusi pendampingan implementasi untuk meraih sertifikasi sistem manajemen</p>
+          </div>
+        </div>
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
+          <div class="jasa-item-body">
+            <h3>Konsultasi SMK3 KEMNAKER</h3>
+            <p>Perusahaan yang mempekerjakan 100 atau lebih pegawai Wajib menerapkan SMK3 PP 50 TH 2012</p>
+          </div>
+        </div>
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-award"></i></div>
+          <div class="jasa-item-body">
+            <h3>Konsultasi Akreditasi</h3>
+            <p>SMI Konsultan adalah konsultan yang membantu Anda dalam proses penilaian kesesuaian standar akreditasi</p>
+          </div>
+        </div>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-award"></i></div>
-        <h3>Konsultasi Akreditasi</h3>
-        <p>SMI Konsultan adalah konsultan yang membantu Anda dalam proses penilaian kesesuaian standar akreditasi</p>
+    </div>
+
+    <div class="jasa-row">
+      <div class="jasa-media reveal">
+        <div class="jasa-framewrap">
+          <img class="logo-pin" src="cropped-logo-smi-bulat-192x192.png" alt="" aria-hidden="true">
+          <div class="jasa-frame"><img src="cybersecconsult.jpg" alt="Konsultasi Cyber Security & Audit IT SMI"></div>
+        </div>
       </div>
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-        <h3>Konsultasi Audit IT</h3>
-        <p>Pendampingan audit teknologi informasi untuk memastikan keputuhan, keamanan, dan efektivitas sistem IT.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Cyber Security</h3>
-        <p>Melindungi sistem dan data dari ancaman siber melalui pengujian dan pengamanan keamanan IT.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-        <h3>Konsultasi SNI</h3>
-        <p>Pendampingan penerapan SNI agar sesuai standar mutu dan regulasi yang berlaku.</p>
+      <div class="jasa-list reveal">
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <div class="jasa-item-body">
+            <h3>Konsultasi Audit IT</h3>
+            <p>Pendampingan audit teknologi informasi untuk memastikan keputuhan, keamanan, dan efektivitas sistem IT.</p>
+          </div>
+        </div>
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="jasa-item-body">
+            <h3>Cyber Security</h3>
+            <p>Melindungi sistem dan data dari ancaman siber melalui pengujian dan pengamanan keamanan IT.</p>
+          </div>
+        </div>
+        <div class="jasa-item">
+          <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div class="jasa-item-body">
+            <h3>Konsultasi SNI</h3>
+            <p>Pendampingan penerapan SNI agar sesuai standar mutu dan regulasi yang berlaku.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -122,7 +157,8 @@
 <section class="why">
   <div class="container">
     <div class="why-img reveal">
-      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=70" alt="Konsultan SMI">
+      <span class="shape-spin" aria-hidden="true"></span>
+      <img src="image-removebg-preview212.png" alt="Konsultan SMI">
     </div>
     <div class="why-text reveal">
       <p class="eyebrow">Solusi Mutu Integritas</p>
@@ -245,9 +281,9 @@
       <div>
         <h4>Kontak Kami</h4>
         <ul>
-          <li><i class="fa-solid fa-phone"></i> +62 815 1111 8749</li>
-          <li><i class="fa-solid fa-envelope"></i> care@solusimutu.id</li>
-          <li><i class="fa-solid fa-location-dot"></i> Bandung, Jawa Barat</li>
+          <li><a href="tel:+6281511118749"><i class="fa-solid fa-phone"></i> +62 815 1111 8749</a></li>
+          <li><a href="mailto:care@solusimutu.id"><i class="fa-solid fa-envelope"></i> care@solusimutu.id</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Bandung%2C+Jawa+Barat" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Bandung, Jawa Barat</a></li>
         </ul>
       </div>
     </div>
@@ -263,6 +299,6 @@
   <a href="https://wa.me/6281511118749" target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
