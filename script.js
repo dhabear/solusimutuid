@@ -79,61 +79,63 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// ---- UI sound effects (synthesized via Web Audio, no asset files) ----
-(() => {
-  let actx = null;
-  const getCtx = () => {
-    if (!actx) {
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return null;
-      actx = new AC();
+// "Whisper": word-by-word staggered fade + slide reveal for text content.
+// Only touches text nodes (icons/toggles inside the same element are left untouched).
+function whisperify(el) {
+  let i = 0;
+  [...el.childNodes].forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (part === '') return;
+        if (/^\s+$/.test(part)) {
+          // Wrap in a span (not a bare text node) so flex containers like
+          // .eyebrow don't collapse whitespace-only text runs between words.
+          const space = document.createElement('span');
+          space.className = 'ww-space';
+          space.textContent = part;
+          frag.appendChild(space);
+          return;
+        }
+        const word = document.createElement('span');
+        word.className = 'ww';
+        const inner = document.createElement('span');
+        inner.textContent = part;
+        inner.style.setProperty('--i', i++);
+        word.appendChild(inner);
+        frag.appendChild(word);
+      });
+      node.replaceWith(frag);
     }
-    if (actx.state === 'suspended') actx.resume();
-    return actx;
-  };
-
-  // Short tone with an attack/decay envelope so it doesn't click/pop
-  function blip({ freq = 880, type = 'sine', dur = 0.08, gain = 0.05, slideTo = null }) {
-    const ctx = getCtx();
-    if (!ctx) return;
-    const osc = ctx.createOscillator();
-    const g = ctx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, ctx.currentTime);
-    if (slideTo) osc.frequency.exponentialRampToValueAtTime(slideTo, ctx.currentTime + dur);
-    g.gain.setValueAtTime(0.0001, ctx.currentTime);
-    g.gain.linearRampToValueAtTime(gain, ctx.currentTime + 0.008);
-    g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + dur);
-    osc.connect(g).connect(ctx.destination);
-    osc.start();
-    osc.stop(ctx.currentTime + dur + 0.02);
-  }
-
-  // Two distinct sounds
-  const playHover = () => blip({ freq: 1650, type: 'sine', dur: 0.06, gain: 0.035 });
-  const playClick = () => blip({ freq: 330, slideTo: 170, type: 'triangle', dur: 0.15, gain: 0.075 });
-
-  // Browsers block audio until a user gesture — unlock on first interaction
-  const unlock = () => getCtx();
-  window.addEventListener('pointerdown', unlock, { once: true });
-  window.addEventListener('keydown', unlock, { once: true });
-
-  const HOVER_SEL = '.btn, nav.main-nav a, .nav-icons .search-btn, .jasa-item, .jasa-frame, .article-card, .acc-head, .socials a, .footer-grid ul li a, .cta-contact, .wa-float, .logo';
-  const CLICK_SEL = 'a, button, .btn, .acc-head, .nav-icons .search-btn, .hamburger, .cta-contact, .jasa-item, .wa-float';
-
-  // Hover: fire once per enter, lightly throttled
-  let lastHover = 0;
-  document.querySelectorAll(HOVER_SEL).forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      const now = performance.now();
-      if (now - lastHover < 45) return;
-      lastHover = now;
-      playHover();
-    });
   });
+  el.classList.add('whisper');
+}
 
-  // Click: delegated, only for interactive targets
-  document.addEventListener('click', (e) => {
-    if (e.target.closest(CLICK_SEL)) playClick();
+const WHISPER_SELECTOR = [
+  '.page-hero h1',
+  '.hero-text h1 .line',
+  '.section-title',
+  '.about-text h2',
+  '.about-text p',
+  '.jasa-item-body h3',
+  '.jasa-item-body p',
+  '.acc-body p',
+  '.article-body h3',
+  '.article-body p',
+  '.cta-inner h3',
+  '.footer-grid p',
+  '.eyebrow'
+].join(',');
+
+const whisperEls = document.querySelectorAll(WHISPER_SELECTOR);
+whisperEls.forEach(whisperify);
+
+const whisperObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      whisperObserver.unobserve(entry.target);
+    }
   });
-})();
+}, { threshold: 0.2 });
+whisperEls.forEach(el => whisperObserver.observe(el));

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
       <nav class="main-nav">
         <ul>
           <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
           <li><a href="#jasa">Jasa Kami <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="dropdown">
               <li><a href="#">Konsultasi Sistem Manajemen</a></li>
@@ -53,13 +53,36 @@
 </header>
 
 <section class="hero" id="beranda">
+  <div class="hero-slideshow" aria-hidden="true">
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+  </div>
   <div class="container">
     <div class="hero-text reveal">
       <div class="badge-pill"><span class="dot">SMI</span> Solusi Mutu Integritas</div>
-      <h1>Solusi Implementasi <br> Sistem Manajemen </h1>
+      <h1><span class="line">Solusi Implementasi</span><br><span class="line">Sistem Manajemen</span></h1>
       <div class="hero-actions">
-        <a href="#jasa" class="btn hero-btn">Selanjutnya <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span></a>
+        <a href="#jasa" class="btn-skew">
+          <span class="span">Selanjutnya</span>
+          <span class="second">
+            <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8580525 C44.4825957,43.0491647 44.1708242,43.0491804 43.9763028,42.8580875 L40.1543745,39.1025807 C39.9560739,38.9077308 39.9560116,38.5875365 40.1542353,38.3926088 L56.9308193,21.8988278 L40.1544242,5.40519592 C39.9561348,5.21029773 39.9560725,4.89010374 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8580525 C24.4825957,43.0491647 24.1708242,43.0491804 23.9763028,42.8580875 L20.1543745,39.1025807 C19.9560739,38.9077308 19.9560116,38.5875365 20.1542353,38.3926088 L36.9308193,21.8988278 L20.1544242,5.40519592 C19.9561348,5.21029773 19.9560725,4.89010374 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8580525 C4.48259569,43.0491647 4.17082418,43.0491804 3.97630284,42.8580875 L0.154374488,39.1025807 C-0.0439260645,38.9077308 -0.0439883824,38.5875365 0.154235349,38.3926088 L16.9308193,21.8988278 L0.154424197,5.40519592 C-0.0438651894,5.21029773 -0.0439274733,4.89010374 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </span>
+        </a>
       </div>
+    </div>
+  </div>
+  <div class="std-marquee" aria-hidden="true">
+    <div class="std-track">
+      <span>ISO 9001</span><span>ISO 14001</span><span>ISO 45001</span><span>ISO 27001</span><span>ISO 37001</span><span>ISO 22000</span><span>ISO 13485</span><span>ISO 21001</span><span>ISO 31000</span><span>SMK3 KEMNAKER</span>
+      <span>ISO 9001</span><span>ISO 14001</span><span>ISO 45001</span><span>ISO 27001</span><span>ISO 37001</span><span>ISO 22000</span><span>ISO 13485</span><span>ISO 21001</span><span>ISO 31000</span><span>SMK3 KEMNAKER</span>
     </div>
   </div>
 </section>
@@ -148,7 +171,18 @@
         <p class="eyebrow">Solusi Mutu Integritas</p>
         <h2>Selamat Datang di SMI Konsultan</h2>
         <p>SMI Konsultan adalah lembaga konsultan sistem manajemen yang siap membantu anda dalam proses sertifikasi sistem manajemen dengan standar ISO 9001, ISO 14001, ISO 45001, ISO 19011, ISO 13485, ISO 21001, ISO 22000, ISO 31000, ISO 37001 dan SMK3 KEMNAKER. smi konsultan mampu membantu anda lembaga sertifikasi untuk melakukan akreditasi penilaian kesesuaian standar dan regulasi.</p>
-        <a href="#jasa" class="btn">Selanjutnya</a>
+        <a href="#jasa" class="btn-skew">
+          <span class="span">Selanjutnya</span>
+          <span class="second">
+            <svg width="50px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8580525 C44.4825957,43.0491647 44.1708242,43.0491804 43.9763028,42.8580875 L40.1543745,39.1025807 C39.9560739,38.9077308 39.9560116,38.5875365 40.1542353,38.3926088 L56.9308193,21.8988278 L40.1544242,5.40519592 C39.9561348,5.21029773 39.9560725,4.89010374 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8580525 C24.4825957,43.0491647 24.1708242,43.0491804 23.9763028,42.8580875 L20.1543745,39.1025807 C19.9560739,38.9077308 19.9560116,38.5875365 20.1542353,38.3926088 L36.9308193,21.8988278 L20.1544242,5.40519592 C19.9561348,5.21029773 19.9560725,4.89010374 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8580525 C4.48259569,43.0491647 4.17082418,43.0491804 3.97630284,42.8580875 L0.154374488,39.1025807 C-0.0439260645,38.9077308 -0.0439883824,38.5875365 0.154235349,38.3926088 L16.9308193,21.8988278 L0.154424197,5.40519592 C-0.0438651894,5.21029773 -0.0439274733,4.89010374 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -158,7 +192,7 @@
   <div class="container">
     <div class="why-img reveal">
       <span class="shape-spin" aria-hidden="true"></span>
-      <img src="image-removebg-preview212.png" alt="Konsultan SMI">
+      <img src="TECW0083.png" alt="Konsultan SMI">
     </div>
     <div class="why-text reveal">
       <p class="eyebrow">Solusi Mutu Integritas</p>
@@ -233,14 +267,21 @@
 
 <section class="cta" id="kontak">
   <div class="cta-inner reveal">
-    <h3>Konsultasikan Kebutuhan ISO Perusahaan Anda Sekarang</h3>
-    <a href="tel:+6281511118749" class="cta-contact">
-      <div class="cta-icon"><i class="fa-solid fa-headset"></i></div>
-      <div>
-        <div class="lbl">Hubungi Kami</div>
-        <div class="num">+62 815 1111 8749</div>
+    <div class="cta-box">
+      <div class="cta-photo">
+        <img src="image-removebg-preview212.png" alt="Konsultan SMI">
       </div>
-    </a>
+      <div class="cta-content">
+        <h3>Konsultasikan Kebutuhan ISO Perusahaan Anda Sekarang</h3>
+        <a href="tel:+6281511118749" class="cta-contact">
+          <div class="cta-icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <div class="lbl">Hubungi Kami</div>
+            <div class="num">+62 815 1111 8749</div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -249,7 +290,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <div class="footer-logo-chip"><img src="logo-web-biru.png" alt="Solusi Mutu Integritas" class="logo-img"></div>
+          <div class="footer-logo-chip"><img src="logo-web-putih.png.webp" alt="Solusi Mutu Integritas" class="logo-img"></div>
         </div>
         <p>SMI Konsultan adalah lembaga konsultasi sistem manajemen yang siap membantu perusahaan anda dalam proses sertifikasi sistem manajemen dengan standar ISO dan SMK3 KEMNAKER yang sesuai dengan kebutuhan perusahaan anda.</p>
         <div class="socials">
@@ -262,7 +303,7 @@
         <h4>Informasi</h4>
         <ul>
           <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
           <li><a href="#artikel">Artikel</a></li>
           <li><a href="#kontak">Kontak Kami</a></li>
         </ul>
@@ -299,6 +340,6 @@
   <a href="https://wa.me/6281511118749" target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
