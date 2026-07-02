@@ -112,7 +112,7 @@ header.nav-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-
 
 /* ===== HERO (sliding photo presentation, blue-filtered) ===== */
 .hero{
-  position:relative;overflow:hidden;min-height:620px;padding:64px 0 116px;display:flex;align-items:center;
+  position:relative;overflow:hidden;min-height:min(720px, calc(100vh - 80px));padding:72px 0 128px;display:flex;align-items:center;
   background:#0f2046;
 }
 .hero-slideshow{
@@ -163,7 +163,7 @@ header.nav-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-
 .services{padding:44px 0 96px;background:var(--surface);}
 .jasa-row{display:flex;align-items:center;gap:56px;margin-top:64px;}
 .jasa-row.media-right{flex-direction:row-reverse;}
-.jasa-media{flex:1;min-width:300px;position:relative;display:flex;align-items:center;justify-content:center;min-height:400px;}
+.jasa-media{flex:1 1 300px;min-width:0;max-width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:400px;}
 .jasa-media::before{content:"";position:absolute;width:72%;height:72%;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(26,99,255,.16),transparent 68%);filter:blur(30px);z-index:0;pointer-events:none;}
 .logo-spin{position:absolute;top:50%;left:50%;width:min(90%,440px);height:auto;transform:translate(-50%,-50%);z-index:0;opacity:.13;animation:spin-cw 42s linear infinite;pointer-events:none;}
 /* Second frame: logo as a spinning corner "pin" badge */
@@ -175,7 +175,7 @@ header.nav-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-
 .jasa-frame:hover{transform:translateY(-6px);}
 .jasa-frame img{width:100%;height:340px;object-fit:cover;display:block;transition:transform .6s var(--ease);}
 .jasa-frame:hover img{transform:scale(1.05);}
-.jasa-list{flex:1;min-width:300px;display:flex;flex-direction:column;gap:12px;}
+.jasa-list{flex:1 1 300px;min-width:0;max-width:100%;display:flex;flex-direction:column;gap:12px;overflow-wrap:break-word;}
 .jasa-item{display:flex;gap:18px;align-items:flex-start;padding:18px;border-radius:var(--radius);border:1px solid transparent;transition:background var(--dur) var(--ease),border-color var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);}
 .jasa-item:hover{background:var(--surface);border-color:var(--border);box-shadow:var(--shadow);transform:translateX(4px);}
 .jasa-item .icon{width:52px;height:52px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;transition:background var(--dur) var(--ease),color var(--dur) var(--ease),transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);}
@@ -345,7 +345,7 @@ footer::before{content:"";position:absolute;top:-130px;left:50%;transform:transl
   .cta-inner h3{max-width:100%;}
 }
 @media(max-width:640px){
-  .hero{min-height:520px;background-position:64% center;padding:44px 0 96px;}
+  .hero{min-height:600px;background-position:64% center;padding:56px 0 96px;}
   .std-track span{font-size:11px;padding:7px 16px;}
   .hero-text{max-width:100%;}
   .hero-text h1{font-size:38px;}
